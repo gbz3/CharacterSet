@@ -27,4 +27,12 @@ public class CharacterSetTest {
 		assertEquals( false, set.is( '～', CharacterSet.Enable.JISX0208 ) );
 	}
 
+	@Test
+	public void testGBK() {
+		final CharacterSet set = CharacterSet.getInstance();
+		assertEquals( true, set.is( '你', CharacterSet.Enable.GBK ) );
+		assertEquals( true, set.is( '好', CharacterSet.Enable.GBK ) );
+		assertEquals( true, set.is( '镕', CharacterSet.Enable.GBK ) );
+	}
+
 }
